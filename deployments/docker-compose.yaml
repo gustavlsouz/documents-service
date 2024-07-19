@@ -1,0 +1,16 @@
+
+services:
+  db:
+    image: postgres:latest
+    container_name: documents-service-database-postgres-container
+    environment:
+      POSTGRES_USER: local_user
+      POSTGRES_PASSWORD: local_passwd
+      POSTGRES_DB: documents-service-database
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
